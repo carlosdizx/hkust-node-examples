@@ -1,11 +1,13 @@
-import rectangle from "./rectangle";
+import rectangle, { RectangleFunctions } from "./rectangle";
 
 const solveRectangle = (l: number, b: number) => {
-  rectangle(l, b, (error: any, rectangle: any) => {
-    if (error) console.error(error.message);
-    else {
-      console.log("The area rectangle is", rectangle.area(l, b));
-      console.log("The permiter rectangle is", rectangle.perimeter(l, b));
+  rectangle(l, b, (error: Error | null, result: RectangleFunctions | null) => {
+    if (error) {
+      console.error(error.message);
+    } else if (result) {
+      const { area, perimeter } = result;
+      console.log("The area rectangle is", area(l, b));
+      console.log("The perimeter rectangle is", perimeter(l, b));
     }
   });
 };
