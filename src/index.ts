@@ -6,7 +6,7 @@ const solveRectangle = (l: number, b: number) => {
     b,
     (error: Error | null, rectangleFunctions: RectangleFunctions | null) => {
       if (error) {
-        console.error(error.message);
+        console.error("Error:", error.message);
       } else if (rectangleFunctions) {
         const { area, perimeter } = rectangleFunctions;
         console.log("The area rectangle is", area(l, b));
@@ -14,6 +14,7 @@ const solveRectangle = (l: number, b: number) => {
       }
     }
   );
+  console.log("This statement after the call to rect()");
 };
 
 solveRectangle(2, 4);
