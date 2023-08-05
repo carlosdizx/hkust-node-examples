@@ -2,10 +2,10 @@
   "name": "node-examples",
   "version": "1.0.0",
   "description": "Simple node example",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "npx tsc && npx ts-node dist/index.js"
   },
   "author": "Carlos Ernesto Diaz Basante",
   "license": "ISC",
